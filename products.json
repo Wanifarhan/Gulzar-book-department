@@ -1,0 +1,12 @@
+{
+  "products": [
+    { "title": "School Bag", "subtitle": "Durable, multiple sizes", "price": "₹450 onwards" },
+    { "title": "Notebooks & Copies", "subtitle": "Ruled, 200 pages", "price": "₹40 onwards" },
+    { "title": "Practical Copy", "subtitle": "Science lab, all classes", "price": "₹50 onwards" },
+    { "title": "JK Board Textbook Set", "subtitle": "Classes I–XII, tell us your class", "price": "Price on request" },
+    { "title": "Geometry Box", "subtitle": "Full instrument set", "price": "₹80 onwards" },
+    { "title": "Pen & Pencil Set", "subtitle": "Everyday writing essentials", "price": "₹60 onwards" },
+    { "title": "Quran Shareef", "subtitle": "With translation, multiple editions", "price": "Price on request" },
+    { "title": "Ask About Anything Else", "subtitle": "Full stationery & book range", "price": "Message us" }
+  ]
+}
