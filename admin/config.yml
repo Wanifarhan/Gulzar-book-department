@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Wanifarhan/Gulzar-book-department
   branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
 
 media_folder: "admin/uploads"
 public_folder: "/admin/uploads"
