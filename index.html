@@ -545,8 +545,11 @@
       grid.innerHTML = products.map(function(p, i){
         const coverClass = 'p' + ((i % 8) + 1);
         const message = encodeURIComponent("Hi, I'd like to order '" + (p.title || "") + "' from Gulzar Book Department.");
+        const cover = p.image
+          ? '<div class="product-cover" style="background-image:url(\'' + p.image + '\'); background-size:cover; background-position:center;"></div>'
+          : '<div class="product-cover ' + coverClass + '"><span>' + escapeHtml(p.title) + '</span></div>';
         return '<div class="product">' +
-          '<div class="product-cover ' + coverClass + '"><span>' + escapeHtml(p.title) + '</span></div>' +
+          cover +
           '<div class="product-info">' +
             '<h3>' + escapeHtml(p.title) + '</h3>' +
             '<div class="author">' + escapeHtml(p.subtitle) + '</div>' +
