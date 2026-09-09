@@ -45,6 +45,13 @@ collections:
           - { label: "FAQ — Delivery/pickup answer", name: "faq_delivery", widget: "text", required: false }
           - { label: "FAQ — COD/payment answer", name: "faq_cod", widget: "text", required: false }
           - { label: "FAQ — Exchange/return answer", name: "faq_exchange", widget: "text", required: false }
+          - label: "Customer Reviews (add real ones here)"
+            name: "testimonials"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Review text", name: "quote", widget: "text" }
+              - { label: "Customer name", name: "name", widget: "string" }
           - { label: "Google Maps Link (paste share link here)", name: "maps_link", widget: "string", required: false }
           - { label: "Instagram Link", name: "instagram_link", widget: "string", required: false }
           - { label: "Facebook Link", name: "facebook_link", widget: "string", required: false }
