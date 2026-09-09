@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gulzar Book Department</title>
+<meta name="description" content="Gulzar Book Department — books, stationery, JK Board textbooks, practical copies, and Quran Shareef, all under one roof in Shopian, J&amp;K. Order via WhatsApp.">
+<meta property="og:title" content="Gulzar Book Department">
+<meta property="og:description" content="Books, stationery, JK Board textbooks, practical copies & Quran Shareef — order easily on WhatsApp.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%2314171f'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='%23c9a227' font-family='Georgia,serif'%3EG%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -347,6 +352,45 @@
   footer{ padding:40px 0; }
   footer .wrap{ display:flex; flex-direction:column; gap:8px; color:var(--text-dim); font-size:0.85rem; }
   @media(min-width:760px){ footer .wrap{ flex-direction:row; justify-content:space-between; } }
+
+  /* ---------- FAQ ---------- */
+  .faq-list{ margin-top:48px; display:grid; gap:1px; background:var(--rule); }
+  .faq-item{ background:var(--bg); }
+  .faq-item summary{
+    padding:20px 4px;
+    cursor:pointer;
+    font-family:'Fraunces', serif;
+    font-size:1.05rem;
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item summary::after{ content:'+'; color:var(--gold); font-size:1.3rem; }
+  .faq-item[open] summary::after{ content:'–'; }
+  .faq-item p{ padding:0 4px 20px; color:var(--text-dim); max-width:60ch; }
+
+  .float-wa{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    z-index:60;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:#25D366;
+    color:#0b1a10;
+    font-weight:600;
+    font-size:0.9rem;
+    padding:14px 18px;
+    border-radius:999px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.4);
+    transition:transform 0.15s ease;
+  }
+  .float-wa:hover{ transform:translateY(-2px); }
+  .float-wa svg{ width:20px; height:20px; flex-shrink:0; }
+  @media(max-width:480px){ .float-wa span{ display:none; } .float-wa{ padding:14px; } }
 </style>
 </head>
 <body>
@@ -360,6 +404,7 @@
       <a href="#shop">Shop</a>
       <a href="#gallery">Gallery</a>
       <a href="#testimonials">Reviews</a>
+      <a href="#faq">FAQ</a>
       <a href="#visit">Visit</a>
     </div>
   </nav>
@@ -486,6 +531,31 @@
   </div>
 </section>
 
+<section id="faq">
+  <div class="wrap">
+    <p class="kicker">Before you order</p>
+    <h2 class="section-title">A few common questions.</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>How do I place an order?</summary>
+        <p>Tap any "Order on WhatsApp" button on this site, or message us directly at 6006089691. Tell us what you need and we'll confirm price and availability.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you offer home delivery, or is it pickup only?</summary>
+        <p id="faq-delivery">[To confirm] — let us know your delivery/pickup policy and we'll update this.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is Cash on Delivery (COD) available?</summary>
+        <p id="faq-cod">[To confirm] — let us know your payment policy and we'll update this.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I exchange or return a product?</summary>
+        <p id="faq-exchange">[To confirm] — let us know your exchange/return policy and we'll update this.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section id="visit" style="border-bottom:none;">
   <div class="wrap">
     <p class="kicker">Visit or write in</p>
@@ -525,7 +595,13 @@
     <span>&copy; 2026 Gulzar Book Department. All rights reserved.</span>
     <span>Stationery, JK Board books, and everything school needs.</span>
   </div>
+  <div class="wrap" id="footer-social" style="margin-top:14px; gap:18px; display:none;"></div>
 </footer>
+
+<a class="float-wa" href="https://wa.me/916006089691?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20something%20from%20Gulzar%20Book%20Department." target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5C10.6 9 10 7.5 9.8 7c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5-1.3c1.5.8 3.2 1.3 4.9 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.3c-1.6 0-3.1-.4-4.5-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4 15.1 3.6 13.6 3.6 12c0-4.6 3.8-8.4 8.4-8.4 4.6 0 8.4 3.8 8.4 8.4 0 4.6-3.8 8.3-8.4 8.3z"/></svg>
+  <span>Order on WhatsApp</span>
+</a>
 
 <script>
   const WHATSAPP_NUMBER = "916006089691";
@@ -549,7 +625,7 @@
         const coverClass = 'p' + ((i % 8) + 1);
         const message = encodeURIComponent("Hi, I'd like to order '" + (p.title || "") + "' from Gulzar Book Department.");
         const cover = p.image
-          ? '<div class="product-cover" style="background-image:url(\'' + p.image + '\'); background-size:cover; background-position:center;"></div>'
+          ? '<div class="product-cover" style="background-image:url(\'' + p.image + '\'); background-size:cover; background-position:center;" role="img" aria-label="' + escapeHtml(p.image_alt || p.title) + '"></div>'
           : '<div class="product-cover ' + coverClass + '"><span>' + escapeHtml(p.title) + '</span></div>';
         return '<div class="product">' +
           cover +
@@ -588,6 +664,9 @@
       setText('contact-hours', s.hours);
       setText('contact-phone', s.phone);
       setText('contact-email', s.email);
+      setText('faq-delivery', s.faq_delivery);
+      setText('faq-cod', s.faq_cod);
+      setText('faq-exchange', s.faq_exchange);
 
       if(s.maps_link){
         const mapsBtn = document.getElementById('maps-link');
@@ -595,6 +674,16 @@
           mapsBtn.href = s.maps_link;
           mapsBtn.style.display = 'inline-block';
         }
+      }
+
+      const socialLinks = [];
+      if(s.instagram_link) socialLinks.push('<a href="' + s.instagram_link + '" target="_blank" rel="noopener">Instagram</a>');
+      if(s.facebook_link) socialLinks.push('<a href="' + s.facebook_link + '" target="_blank" rel="noopener">Facebook</a>');
+      if(s.reviews_link) socialLinks.push('<a href="' + s.reviews_link + '" target="_blank" rel="noopener">Google Reviews</a>');
+      if(socialLinks.length){
+        const socialEl = document.getElementById('footer-social');
+        socialEl.innerHTML = socialLinks.join('');
+        socialEl.style.display = 'flex';
       }
 
       if(s.extra_sections && s.extra_sections.length){
