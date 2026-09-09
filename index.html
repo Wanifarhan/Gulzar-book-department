@@ -368,24 +368,24 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <h1>Books, Stationery &amp; Everything You Need to Learn and Create.</h1>
-      <p class="lede">Your trusted destination for books, stationery, educational supplies, and everyday essentials — for students, teachers, professionals, and book lovers.</p>
+      <h1 id="hero-title">Books, Stationery &amp; Everything You Need to Learn and Create.</h1>
+      <p class="lede" id="hero-subtitle">Your trusted destination for books, stationery, educational supplies, and everyday essentials — for students, teachers, professionals, and book lovers.</p>
       <a href="#visit" class="btn">Plan a visit</a>
     </div>
     <div class="hero-side">
-      <p class="cat">Open every morning, before the first bell</p>
-      <p>From academic books to notebooks, art &amp; craft supplies, and everyday essentials — all under one roof.</p>
+      <p class="cat" id="hero-tagline">Open every morning, before the first bell</p>
+      <p id="hero-side-text">From academic books to notebooks, art &amp; craft supplies, and everyday essentials — all under one roof.</p>
     </div>
   </div>
 </section>
 
 <section id="about">
   <div class="wrap">
-    <p class="kicker">Welcome to Gulzar Book Department</p>
-    <h2 class="section-title">Everything to learn and create, under one roof.</h2>
+    <p class="kicker" id="about-kicker">Welcome to Gulzar Book Department</p>
+    <h2 class="section-title" id="about-title">Everything to learn and create, under one roof.</h2>
     <div class="about-grid">
-      <p>From academic books and study materials to notebooks, writing supplies, art &amp; craft items, and more — we bring a wide range of quality products together under one roof.</p>
-      <p>Our aim is to make learning and creativity easier, more accessible, and more affordable for everyone.</p>
+      <p id="about-para1">From academic books and study materials to notebooks, writing supplies, art &amp; craft items, and more — we bring a wide range of quality products together under one roof.</p>
+      <p id="about-para2">Our aim is to make learning and creativity easier, more accessible, and more affordable for everyone.</p>
     </div>
     <div class="stat-row">
       <div><div class="num">📚</div><div class="lab">Wide variety — books, stationery &amp; creative supplies</div></div>
@@ -492,10 +492,11 @@
     <h2 class="section-title">Come find the quiet corner.</h2>
     <div class="contact-grid">
       <div>
-        <div class="info-line"><span>Location</span><span>Near Teen Masjid Bridge, Bona Bazar, Shopian</span></div>
-        <div class="info-line"><span>Hours</span><span>Open 24 hours</span></div>
-        <div class="info-line"><span>Phone</span><span>6006089691, 6006945910</span></div>
-        <div class="info-line"><span>Email</span><span>Gulzarbookdepartment@gmail.com</span></div>
+        <div class="info-line"><span>Location</span><span id="contact-address">Near Teen Masjid Bridge, Bona Bazar, Shopian</span></div>
+        <div class="info-line"><span>Hours</span><span id="contact-hours">Open 24 hours</span></div>
+        <div class="info-line"><span>Phone</span><span id="contact-phone">6006089691, 6006945910</span></div>
+        <div class="info-line"><span>Email</span><span id="contact-email">Gulzarbookdepartment@gmail.com</span></div>
+        <a id="maps-link" href="#" target="_blank" rel="noopener" class="btn btn-ghost" style="margin-top:20px; display:none;">View on Google Maps</a>
       </div>
       <form onsubmit="event.preventDefault(); this.querySelector('.sent').style.display='block';">
         <div>
@@ -516,6 +517,8 @@
     </div>
   </div>
 </section>
+
+<div id="extra-sections"></div>
 
 <footer>
   <div class="wrap">
@@ -563,6 +566,51 @@
       const grid = document.getElementById('shop-grid');
       if(grid) grid.innerHTML = '<p style="color:var(--text-dim); grid-column:1/-1;">Products couldn\'t be loaded right now.</p>';
     });
+  function setText(id, value){
+    if(value === undefined || value === null || value === "") return;
+    const el = document.getElementById(id);
+    if(el) el.textContent = value;
+  }
+
+  fetch('./settings.json?_=' + Date.now())
+    .then(function(res){ return res.json(); })
+    .then(function(s){
+      if(!s) return;
+      setText('hero-title', s.hero_title);
+      setText('hero-subtitle', s.hero_subtitle);
+      setText('hero-tagline', s.hero_tagline);
+      setText('hero-side-text', s.hero_side_text);
+      setText('about-kicker', s.about_kicker);
+      setText('about-title', s.about_title);
+      setText('about-para1', s.about_para1);
+      setText('about-para2', s.about_para2);
+      setText('contact-address', s.address);
+      setText('contact-hours', s.hours);
+      setText('contact-phone', s.phone);
+      setText('contact-email', s.email);
+
+      if(s.maps_link){
+        const mapsBtn = document.getElementById('maps-link');
+        if(mapsBtn){
+          mapsBtn.href = s.maps_link;
+          mapsBtn.style.display = 'inline-block';
+        }
+      }
+
+      if(s.extra_sections && s.extra_sections.length){
+        const container = document.getElementById('extra-sections');
+        container.innerHTML = s.extra_sections.map(function(sec){
+          return '<section>' +
+            '<div class="wrap">' +
+              (sec.kicker ? '<p class="kicker">' + escapeHtml(sec.kicker) + '</p>' : '') +
+              (sec.title ? '<h2 class="section-title">' + escapeHtml(sec.title) + '</h2>' : '') +
+              (sec.body ? '<p style="margin-top:24px; color:var(--text-dim); max-width:60ch;">' + escapeHtml(sec.body) + '</p>' : '') +
+            '</div>' +
+          '</section>';
+        }).join('');
+      }
+    })
+    .catch(function(){ /* keep default content if settings.json is missing */ });
 </script>
 </body>
 </html>
