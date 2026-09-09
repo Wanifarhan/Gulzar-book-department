@@ -501,33 +501,11 @@
   </div>
 </section>
 
-<section id="testimonials">
+<section id="testimonials" style="display:none;">
   <div class="wrap">
     <p class="kicker">From regulars</p>
     <h2 class="section-title">What people say on their way out.</h2>
-    <div class="testi-list">
-      <div class="testi">
-        <div class="mark">&ldquo;</div>
-        <div>
-          <p class="quote">I've stopped buying books online. The staff picks here have a better hit rate than any recommendation engine I've used.</p>
-          <p class="who">— Priya M., regular since 2022</p>
-        </div>
-      </div>
-      <div class="testi">
-        <div class="mark">&ldquo;</div>
-        <div>
-          <p class="quote">My kids ask to come here instead of the toy aisle. That's the whole review, really.</p>
-          <p class="who">— Daniel R., parent of two</p>
-        </div>
-      </div>
-      <div class="testi">
-        <div class="mark">&ldquo;</div>
-        <div>
-          <p class="quote">Found a signed first edition I'd been hunting for two years. They just had it, quietly, in the case.</p>
-          <p class="who">— Esther K., collector</p>
-        </div>
-      </div>
-    </div>
+    <div class="testi-list" id="testi-list"></div>
   </div>
 </section>
 
@@ -674,6 +652,21 @@
           mapsBtn.href = s.maps_link;
           mapsBtn.style.display = 'inline-block';
         }
+      }
+
+      if(s.testimonials && s.testimonials.length){
+        const testiSection = document.getElementById('testimonials');
+        const testiList = document.getElementById('testi-list');
+        testiList.innerHTML = s.testimonials.map(function(t){
+          return '<div class="testi">' +
+            '<div class="mark">&ldquo;</div>' +
+            '<div>' +
+              '<p class="quote">' + escapeHtml(t.quote) + '</p>' +
+              '<p class="who">— ' + escapeHtml(t.name) + '</p>' +
+            '</div>' +
+          '</div>';
+        }).join('');
+        testiSection.style.display = 'block';
       }
 
       const socialLinks = [];
