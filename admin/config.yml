@@ -21,3 +21,32 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Subtitle / details", name: "subtitle", widget: "string", required: false }
               - { label: "Price", name: "price", widget: "string" }
+
+  - name: "settings"
+    label: "Site Content"
+    files:
+      - file: "settings.json"
+        label: "Homepage & Contact Info"
+        name: "settings"
+        fields:
+          - { label: "Hero — Main Headline", name: "hero_title", widget: "string" }
+          - { label: "Hero — Subtitle", name: "hero_subtitle", widget: "text" }
+          - { label: "Hero — Small Tagline (right side)", name: "hero_tagline", widget: "string" }
+          - { label: "Hero — Small Text (right side)", name: "hero_side_text", widget: "text" }
+          - { label: "About — Kicker (small heading above title)", name: "about_kicker", widget: "string" }
+          - { label: "About — Title", name: "about_title", widget: "string" }
+          - { label: "About — Paragraph 1", name: "about_para1", widget: "text" }
+          - { label: "About — Paragraph 2", name: "about_para2", widget: "text" }
+          - { label: "Contact — Address", name: "address", widget: "string" }
+          - { label: "Contact — Hours", name: "hours", widget: "string" }
+          - { label: "Contact — Phone", name: "phone", widget: "string" }
+          - { label: "Contact — Email", name: "email", widget: "string" }
+          - { label: "Google Maps Link (paste share link here)", name: "maps_link", widget: "string", required: false }
+          - label: "Extra Sections (add new sections here)"
+            name: "extra_sections"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Small heading above title", name: "kicker", widget: "string", required: false }
+              - { label: "Section Title", name: "title", widget: "string", required: false }
+              - { label: "Paragraph text", name: "body", widget: "text", required: false }
