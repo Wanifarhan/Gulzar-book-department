@@ -18,6 +18,7 @@ collections:
             widget: "list"
             fields:
               - { label: "Photo", name: "image", widget: "image", required: false }
+              - { label: "Photo description (for search engines)", name: "image_alt", widget: "string", required: false }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Subtitle / details", name: "subtitle", widget: "string", required: false }
               - { label: "Price", name: "price", widget: "string" }
@@ -41,7 +42,13 @@ collections:
           - { label: "Contact — Hours", name: "hours", widget: "string" }
           - { label: "Contact — Phone", name: "phone", widget: "string" }
           - { label: "Contact — Email", name: "email", widget: "string" }
+          - { label: "FAQ — Delivery/pickup answer", name: "faq_delivery", widget: "text", required: false }
+          - { label: "FAQ — COD/payment answer", name: "faq_cod", widget: "text", required: false }
+          - { label: "FAQ — Exchange/return answer", name: "faq_exchange", widget: "text", required: false }
           - { label: "Google Maps Link (paste share link here)", name: "maps_link", widget: "string", required: false }
+          - { label: "Instagram Link", name: "instagram_link", widget: "string", required: false }
+          - { label: "Facebook Link", name: "facebook_link", widget: "string", required: false }
+          - { label: "Google Reviews Link", name: "reviews_link", widget: "string", required: false }
           - label: "Extra Sections (add new sections here)"
             name: "extra_sections"
             widget: "list"
