@@ -1,11 +1,3 @@
 {
-  "products": [
-    {
-      "image": "/admin/uploads/snapchat-792038256.jpg",
-      "image_alt": "Top quality natural roses",
-      "title": "Roses",
-      "subtitle": "Fair price",
-      "price": "₹100"
-    }
-  ]
+  "products": []
 }
