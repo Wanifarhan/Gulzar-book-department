@@ -17,6 +17,7 @@ collections:
             name: "products"
             widget: "list"
             fields:
+              - { label: "Photo", name: "image", widget: "image", required: false }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Subtitle / details", name: "subtitle", widget: "string", required: false }
               - { label: "Price", name: "price", widget: "string" }
